@@ -9,10 +9,21 @@
             margin: 5px;
             background-color: #f3f3f3
         }
+
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
     </style>
 </head>
 <body>
   <div class="content">
+      {% for message in get_flashed_messages() %}
+          <div class="alert">{{ message }}</div>
+      {% endfor %}
+
       {% block content %} {% endblock %}
   </div>
 </body>
