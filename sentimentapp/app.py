@@ -10,7 +10,6 @@ app = flask.Flask(__name__)
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = 'A#IPmd83B*d7Z'
 
-LAST_HEADLINE = None
 
 # test data
 sentiment_scores = [
@@ -22,14 +21,23 @@ sentiment_scores = [
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    headline = None
     if request.method == 'POST':
         headline = request.form['headline']
     if not headline:
         flash('Headline is required!')
     else:
-        return render_template('home_action.html', headline=headline)
+        # Get sentiment score
+        sentiment_score = 0
+        if headline == 'positive':
+            sentiment_score = 1
+        elif headline == 'negative':
+            sentiment_score = -1
+        return render_template('index_action.html',
+                               headline=headline,
+                               sentiment_score=sentiment_score)
 
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 app.run()

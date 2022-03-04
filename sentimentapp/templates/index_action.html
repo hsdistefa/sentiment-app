@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Finance Headline Sentiment - Up or Down?</title>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+                <li class="sidebar-nav-item"><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1">Finance Headline Sentiment</h1>
+                <h3 class="mb-5"><em>Up or Down?</em></h3>
+        <form class="form-subscribe" id="contactForm" method="post">
+          <!-- Email address input-->
+          <div class="row">
+            <div class="col">
+              <input class="form-control form-control-lg"
+                   id="emailAddress"
+                   type="text" placeholder="Financial News Headline"
+                   data-sb-validations="required"
+                   name="headline"
+                   value="{{ request.form['headline'] }}"></input>
+              <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+              <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+            </div>
+            <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Submit</button></div>
+          </div>
+          <!-- Submit success message-->
+          <!---->
+          <!-- This is what your users will see when the form-->
+          <!-- has successfully submitted-->
+          <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+              <div class="fw-bolder">Form submission successful!</div>
+            </div>
+          </div>
+          <!-- Submit error message-->
+          <!---->
+          <!-- This is what your users will see when there is-->
+          <!-- an error submitting the form-->
+          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+        </form>
+            </div>
+        </header>
+        <!-- Result-->
+        <div id="result">
+            <p>The Headline You Entered Was {{headline}}!</p>
+            <p>Sentiment score: {{sentiment_score}}</p>
+        </div>
+    </body>
+</html>
