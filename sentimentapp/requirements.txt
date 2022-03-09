@@ -2,6 +2,7 @@ Flask
 numpy
 pandas
 setuptools_rust
-#./wheels/tensorflow-2.8.0-cp310-cp310-manylinux2010_x86_64.whl
-https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.8.0-cp37-cp37m-manylinux2010_x86_64.whl
+# Must be same Tensorflow version as model was trained by
+# This Tensorflow-CPU wheel is for python 3.9 on linux only
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.8.0-cp39-cp39-manylinux2010_x86_64.whl
 transformers
