@@ -27,8 +27,8 @@
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Finance Headline Sentiment</h1>
-                <h3 class="mb-5"><em>Up or Down?</em></h3>
+              <h1 class="mb-1" style="color:#F9F9F9">{{headline}}</h1>
+              <h3 class="mb-5" style="color:#95DC45">Sentiment Score: {{sentiment_score}}</h3>
         <form class="form-subscribe" id="contactForm" method="post">
           <!-- Email address input-->
           <div class="row">
@@ -61,10 +61,5 @@
         </form>
             </div>
         </header>
-        <!-- Result-->
-        <div id="result">
-            <p>The Headline You Entered Was {{headline}}!</p>
-            <p>Sentiment score: {{sentiment_score}}</p>
-        </div>
     </body>
 </html>
